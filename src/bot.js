@@ -1,12 +1,14 @@
 require('dotenv');
 
-const { Client } = require('discord.js');
+const { Client, MessageEmbed } = require('discord.js');
 const client = new Client();
 const ban = require('./ban.js');
 const invite = require('./invite.js');
 const kick = require('./kick.js');
 const ping = require('./ping.js');
 const social = require('./social.js');
+const meme = require('./meme.js');
+const help = require('./help.js');
 
 client.on('ready', () => {
     client.user.setStatus('idle');
@@ -17,6 +19,8 @@ client.on('ready', () => {
     invite(client)
     ping(client)
     social(client)
+    meme(client)
+    help(client)
 });
 
 
@@ -36,6 +40,7 @@ client.on('ready', () => {
 
   
 });
+
 
 
 
