@@ -3,7 +3,7 @@ module.exports = client => {
     const got = require('got');
 
     client.on('message', message => {
-        if (message.content === "r!meme") {
+        if (message.content.toLowerCase() === "r!meme") {
             const embed = new MessageEmbed()
             got('https://www.reddit.com/r/Ratorix/random/.json').then(response => {
                 let content = JSON.parse(response.body);
