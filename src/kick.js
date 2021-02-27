@@ -26,10 +26,8 @@ module.exports = client => {
       
           if (!message.guild) return;
         
-          if (message.content.startsWith(`${prefix}kick`)) {
-            const user = message.mentions.users.first();
+          if (message.content.toLowerCase().startsWith(`${prefix}kick`)) {
             if (user) {
-              const member = message.guild.member(user);
               if (member) {
                 member
                   .kick('Optional reason that will display in the audit logs')
