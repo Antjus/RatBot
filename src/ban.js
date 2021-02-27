@@ -33,10 +33,8 @@ module.exports = client => {
       
         if (!message.guild) return;
         
-          if (message.content.startsWith(`${prefix}ban`)) {
-            const user = message.mentions.users.first();
+          if (message.content.toLowerCase().startsWith(`${prefix}ban`)) {
             if (user) {
-              const member = message.guild.member(user);
               if (member) {
                 member
                   .ban({
