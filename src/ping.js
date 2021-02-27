@@ -5,7 +5,7 @@ module.exports = client => {
     client.on('message', message => { 
         if (!message.guild) return;
       
-        if (message.content.startsWith(`${prefix}ping`)) {
+        if (message.content.toLowerCase().startsWith(`${prefix}ping`)) {
         const embed = new MessageEmbed()
     
         .setTitle('Pong 🏓 ')
