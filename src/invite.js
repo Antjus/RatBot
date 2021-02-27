@@ -3,7 +3,7 @@ module.exports = client => {
     const prefix = "r!";
     
     client.on('message', message => { 
-        if (message.content.startsWith(`${prefix}invite`)) {
+        if (message.content.toLowerCase().startsWith(`${prefix}invite`)) {
           const embed = new MessageEmbed()
     
             .setTitle('Link di Invito')
