@@ -4,7 +4,7 @@ module.exports = client => {
 
     
 client.on('message', message => {
-    if (message.content.startsWith(`${prefix}help`)) {
+    if (message.content.toLowerCase().startsWith(`${prefix}help`)) {
     const embed = new MessageEmbed()
     .setTitle('Serve aiuto?')
     .setDescription('Per avere informazioni sulle varie tipologie di comandi disponibili utilizza `r!help <categoria>`')
