@@ -48,7 +48,7 @@ module.exports = client => {
       });
       
       client.on('message', message => { //subreddit
-        if (message.content.startsWith(`${prefix}subreddit`)) {
+        if (message.content.toLowerCase().startsWith(`${prefix}subreddit`)) {
           const embed = new MessageEmbed()
       
             .setTitle('Subreddit')
@@ -58,6 +58,21 @@ module.exports = client => {
             .setThumbnail('https://media.discordapp.net/attachments/814582828348080178/814859567459860490/download_1.jpg?width=473&height=473')
             .setColor('#808080')
             .setURL('https://www.reddit.com/r/Ratorix/');
+          message.channel.send(embed);
+        }
+      });
+      
+      client.on('message', message => { //twitch
+        if (message.content.startsWith(`${prefix}twitch`)) {
+          const embed = new MessageEmbed()
+      
+            .setTitle('Twitch')
+            .setDescription("Il Twitch di Ratorix")
+            .setTimestamp()
+            .setFooter('RatBot', 'https://media.discordapp.net/attachments/814582828348080178/814588777720446976/unnamed.jpg')
+            .setThumbnail('https://media.discordapp.net/attachments/814582828348080178/814929572512530492/twitch.png')
+            .setColor('#808080')
+            .setURL('https://www.twitch.tv/ratorix98');
           message.channel.send(embed);
         }
       });
